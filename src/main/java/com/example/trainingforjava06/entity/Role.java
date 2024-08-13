@@ -5,25 +5,17 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
 @Entity
-@Table(name = "Student")
-public class Student {
+@Table(name= "role")
+public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
-    private String studentCode;
+    private int id;
 
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "id_subject", referencedColumnName = "id")
-    private Subject subject;
-
-
+    private boolean isActivate;
 }

@@ -5,6 +5,15 @@
     <title>Title</title>
 </head>
 <body>
-
+<form method="post" th:action="@{/student/update}" th:object="${Student}">
+    Student id: <input th:field="*{id}" type="text" readonly> <br>
+    Student code: <input th:field="*{studentCode}" type="text"> <br>
+    Student name: <input th:field="*{name}" type="text"> <br>
+    Subject:
+    <select th:field="*{subject}">
+        <option th:each="s: ${listSubject}" th:text="${s.name}" th:value="${s.id}"></option>
+    </select>
+    <button>Update</button>
+</form>
 </body>
 </html>
